@@ -1,0 +1,13 @@
+{
+  "name": "spirulina-business",
+  "version": "1.0.0",
+  "description": "Static website for Spirulina health business",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["spirulina", "health", "superfood", "static"],
+  "author": "",
+  "license": "MIT"
+}
