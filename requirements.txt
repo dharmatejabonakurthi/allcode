@@ -1,0 +1,4 @@
+# No external dependencies required for basic server
+# Python 3.6+ standard library is sufficient
+# For additional features, you can install:
+# watchdog==3.0.0  # For auto-reload during development

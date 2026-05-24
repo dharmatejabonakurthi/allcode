@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>QuickCart | Groceries Delivered in 10 Minutes</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span>Quick<span class="highlight">Cart</span></span>
+                </div>
+                <div class="location-selector">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Delivering to</span>
+                    <select id="locationSelect">
+                        <option>Downtown - 560001</option>
+                        <option>Indiranagar - 560038</option>
+                        <option>Koramangala - 560034</option>
+                        <option>Whitefield - 560066</option>
+                    </select>
+                </div>
+                <div class="nav-actions">
+                    <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                    <a href="#" class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <a href="#" class="btn-login">Login</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Delivery Promise -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="delivery-badge">
+                    <i class="fas fa-clock"></i>
+                    <span>10 MINUTE DELIVERY</span>
+                </div>
+                <h1>Groceries delivered in <span class="gradient-text">10 minutes</span></h1>
+                <p>Fresh vegetables, fruits, dairy, snacks & more — delivered to your doorstep at lightning speed</p>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search for groceries, snacks, beverages..." id="searchInput">
+                    <button class="btn-search">Search</button>
+                </div>
+                <div class="promo-banner">
+                    <i class="fas fa-tag"></i>
+                    <span>First order? Use code <strong>QUICK20</strong> for 20% off (max ₹100)</span>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="delivery-animation">
+                    <i class="fas fa-motorcycle"></i>
+                    <div class="delivery-text">⚡ 10 min delivery</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Shop by <span class="gradient-text">Category</span></h2>
+                <p>Everything you need, just a tap away</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" data-category="fruits">
+                    <div class="category-icon"><i class="fas fa-apple-alt"></i></div>
+                    <h3>Fruits & Veggies</h3>
+                    <span>100+ items</span>
+                </div>
+                <div class="category-card" data-category="dairy">
+                    <div class="category-icon"><i class="fas fa-cheese"></i></div>
+                    <h3>Dairy & Eggs</h3>
+                    <span>80+ items</span>
+                </div>
+                <div class="category-card" data-category="snacks">
+                    <div class="category-icon"><i class="fas fa-cookie-bite"></i></div>
+                    <h3>Snacks & Drinks</h3>
+                    <span>200+ items</span>
+                </div>
+                <div class="category-card" data-category="staples">
+                    <div class="category-icon"><i class="fas fa-bread-slice"></i></div>
+                    <h3>Staples</h3>
+                    <span>150+ items</span>
+                </div>
+                <div class="category-card" data-category="household">
+                    <div class="category-icon"><i class="fas fa-soap"></i></div>
+                    <h3>Household</h3>
+                    <span>120+ items</span>
+                </div>
+                <div class="category-card" data-category="beverages">
+                    <div class="category-icon"><i class="fas fa-mug-hot"></i></div>
+                    <h3>Beverages</h3>
+                    <span>90+ items</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trending <span class="gradient-text">Now</span></h2>
+                <p>Most loved items by our customers</p>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>10 Minute Delivery</h3>
+                    <p>Fastest delivery in town — guaranteed or free</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Farm Fresh</h3>
+                    <p>Direct sourcing from local farmers</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-tag"></i></div>
+                    <h3>Best Prices</h3>
+                    <p>No minimum order, no hidden fees</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Safe & Hygienic</h3>
+                    <p>Contactless delivery options available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Download Banner -->
+    <section class="app-banner">
+        <div class="container app-container">
+            <div class="app-content">
+                <h2>Get the <span class="gradient-text">QuickCart</span> App</h2>
+                <p>Faster checkout, exclusive deals, and real-time order tracking</p>
+                <div class="app-buttons">
+                    <a href="#" class="app-btn"><i class="fab fa-google-play"></i> Google Play</a>
+                    <a href="#" class="app-btn"><i class="fab fa-apple"></i> App Store</a>
+                </div>
+            </div>
+            <div class="app-qr">
+                <div class="qr-placeholder">
+                    <i class="fas fa-qrcode"></i>
+                    <span>Scan to download</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+            <button class="close-cart" id="closeCartBtn">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-basket"></i>
+                <p>Your cart is empty</p>
+                <p class="empty-sub">Add items from the store</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+            <button class="btn-checkout" id="checkoutBtn">Checkout <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <i class="fas fa-shopping-basket"></i>
+                        <span>Quick<span class="highlight">Cart</span></span>
+                    </div>
+                    <p>India's fastest grocery delivery service</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 80 1234 5678</li>
+                        <li><i class="fas fa-envelope"></i> support@quickcart.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 QuickCart. Delivering happiness in 10 minutes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
