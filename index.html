@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Accenture | Let There Be Change</title>
+    <!-- Google Fonts + Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ========== RESET & GLOBAL ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1e2a3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* accenture brand colors */
+        :root {
+            --accenture-purple: #a100ff;
+            --accenture-dark: #2d2f36;
+            --accenture-gray: #6b7280;
+            --accenture-light-bg: #f9fafb;
+            --accenture-border: #e5e7eb;
+        }
+
+        /* buttons */
+        .btn-primary {
+            background-color: var(--accenture-purple);
+            color: white;
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 40px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            letter-spacing: -0.2px;
+            box-shadow: 0 2px 5px rgba(161,0,255,0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: #8a00dd;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(161,0,255,0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid var(--accenture-purple);
+            color: var(--accenture-purple);
+            font-weight: 600;
+            padding: 11px 28px;
+            border-radius: 40px;
+            display: inline-block;
+            transition: 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: var(--accenture-purple);
+            color: white;
+        }
+
+        /* header + nav */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(6px);
+            z-index: 100;
+            border-bottom: 1px solid var(--accenture-border);
+            padding: 16px 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #a100ff, #6a0dad);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.7rem;
+            letter-spacing: -0.5px;
+            color: #111827;
+        }
+
+        .logo-text span {
+            color: var(--accenture-purple);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.2s;
+            color: #2c3e50;
+        }
+
+        .nav-links a:hover {
+            color: var(--accenture-purple);
+        }
+
+        /* hero section */
+        .hero {
+            padding: 80px 0 100px;
+            background: linear-gradient(135deg, #ffffff 0%, #f5f0ff 100%);
+        }
+
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-badge {
+            background: #ede9fe;
+            color: #6b21a5;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -1.5px;
+            color: #0a0c10;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #4b5563;
+            max-width: 90%;
+            margin-bottom: 32px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            margin-top: 32px;
+        }
+
+        .stat-item h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accenture-purple);
+        }
+
+        .hero-image {
+            flex: 1;
+            background: url('https://placehold.co/600x500/ede9fe/white?text=Accenture+Innovation') no-repeat center center/cover;
+            border-radius: 32px;
+            min-height: 380px;
+            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.1);
+            background-image: linear-gradient(125deg, #d9c8ff 0%, #b89eff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #2d2f36;
+            font-size: 1.8rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        /* services section */
+        .services {
+            padding: 90px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: #5a6874;
+            max-width: 680px;
+            margin: 0 auto 56px auto;
+            font-size: 1.1rem;
+        }
+
+        .cards-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+        }
+
+        .service-card {
+            flex: 1 1 280px;
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 32px 24px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+            transition: all 0.25s;
+            border: 1px solid #f0eef5;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 48px -12px rgba(161,0,255,0.15);
+            border-color: #e2d5ff;
+        }
+
+        .card-icon {
+            font-size: 2.8rem;
+            color: var(--accenture-purple);
+            margin-bottom: 24px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .service-card p {
+            color: #5c6b7e;
+            line-height: 1.5;
+        }
+
+        /* insight / about section */
+        .insight {
+            background-color: var(--accenture-light-bg);
+            padding: 90px 0;
+        }
+
+        .insight-flex {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .insight-text {
+            flex: 1;
+        }
+
+        .insight-text h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .insight-text p {
+            color: #4a5a6e;
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .checklist li {
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checklist i {
+            color: var(--accenture-purple);
+            font-size: 1.2rem;
+        }
+
+        .insight-img {
+            flex: 1;
+            background: #e2d5ff;
+            border-radius: 36px;
+            min-height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://placehold.co/600x400/d9c8ff/ffffff?text=Global+Reach');
+            background-size: cover;
+            background-position: center;
+            font-weight: 500;
+            color: #1f2937;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        /* case studies / work */
+        .case-studies {
+            padding: 90px 0;
+        }
+
+        .case-grid {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .case-item {
+            flex: 1 1 320px;
+            background: #fff;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            border: 1px solid #edeef2;
+            transition: 0.2s;
+        }
+
+        .case-item:hover {
+            border-color: #cdc0f0;
+        }
+
+        .case-img {
+            height: 200px;
+            background: linear-gradient(145deg, #c9b6ff, #aa8eff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .case-content {
+            padding: 24px;
+        }
+
+        .case-content h4 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .case-tag {
+            color: var(--accenture-purple);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(105deg, #0f0c1f 0%, #1b1535 100%);
+            color: white;
+            padding: 70px 0;
+            text-align: center;
+            border-radius: 0px;
+        }
+
+        .cta h2 {
+            font-size: 2.4rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            max-width: 600px;
+            margin: 0 auto 32px auto;
+            opacity: 0.85;
+        }
+
+        .btn-cta {
+            background: white;
+            color: #1b1535;
+            box-shadow: none;
+        }
+
+        .btn-cta:hover {
+            background: #f0eaff;
+            transform: translateY(-2px);
+        }
+
+        /* footer */
+        footer {
+            background: #111827;
+            color: #cbd5e1;
+            padding: 64px 0 32px;
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand p {
+            margin-top: 12px;
+            max-width: 260px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 56px;
+            flex-wrap: wrap;
+        }
+
+        .link-col h4 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .link-col a {
+            display: block;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+            color: #cbd5e6;
+        }
+
+        .link-col a:hover {
+            color: var(--accenture-purple);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            font-size: 1.4rem;
+            margin-top: 24px;
+        }
+
+        .social-icons a {
+            color: #cbd5e6;
+            transition: 0.2s;
+        }
+
+        .social-icons a:hover {
+            color: var(--accenture-purple);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid #1f2a3e;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 900px) {
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-content p {
+                max-width: 100%;
+            }
+            .container {
+                padding: 0 24px;
+            }
+        }
+        @media (max-width: 600px) {
+            .nav-links {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero-stats {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo-area">
+                <i class="fas fa-chart-line logo-icon"></i>
+                <div class="logo-text">Accen<span>ture</span></div>
+            </div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Services</a>
+                <a href="#">Insights</a>
+                <a href="#">Careers</a>
+                <a href="#">Contact</a>
+                <a href="#" class="btn-outline" style="padding: 8px 20px;">Sign In</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero section -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="hero-badge"><i class="fas fa-bolt"></i> Let there be change</span>
+                    <h1>We architect <br> the digital future.</h1>
+                    <p>Accenture embraces the power of change to create 360° value and shared success for our clients, people, and communities.</p>
+                    <a href="#" class="btn-primary">Explore opportunities <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
+                    <div class="hero-stats">
+                        <div class="stat-item"><h3>699K+</h3><span>People globally</span></div>
+                        <div class="stat-item"><h3>120+</h3><span>Countries</span></div>
+                        <div class="stat-item"><h3>#1</h3><span>Tech Innovator</span></div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <span><i class="fas fa-microchip"></i>   Innovation Hub</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services / Core offerings -->
+        <section class="services">
+            <div class="container">
+                <h2 class="section-title">What we do</h2>
+                <p class="section-sub">From strategy to execution, we combine deep industry expertise with leading capabilities in cloud, AI, and security.</p>
+                <div class="cards-grid">
+                    <div class="service-card">
+                        <div class="card-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                        <h3>Cloud First</h3>
+                        <p>Accelerate business transformation with cloud at scale — modernize, migrate, and innovate faster.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-icon"><i class="fas fa-robot"></i></div>
+                        <h3>Applied AI</h3>
+                        <p>Harness the power of generative AI and data to reimagine processes and customer experiences.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Security</h3>
+                        <p>Build cyber resilience and protect what matters most with 360° security strategies.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Strategy & Consulting</h3>
+                        <p>Navigate disruption with data-driven insights and reinvent your business model.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- insight / about section -->
+        <section class="insight">
+            <div class="container insight-flex">
+                <div class="insight-text">
+                    <h2>Creating 360° value for a new era</h2>
+                    <p>We combine our global scale, tech prowess, and human ingenuity to help clients become the next and best versions of themselves.</p>
+                    <ul class="checklist">
+                        <li><i class="fas fa-check-circle"></i> $64.8B+ revenue (FY24)</li>
+                        <li><i class="fas fa-check-circle"></i> 280+ innovation hubs worldwide</li>
+                        <li><i class="fas fa-check-circle"></i> Top ranked in sustainability & inclusion</li>
+                    </ul>
+                    <a href="#" class="btn-primary">Learn more about Accenture <i class="fas fa-long-arrow-alt-right"></i></a>
+                </div>
+                <div class="insight-img">
+                    <i class="fas fa-globe-americas" style="margin-right: 12px;"></i> Global innovation network
+                </div>
+            </div>
+        </section>
+
+        <!-- case studies (impact) -->
+        <section class="case-studies">
+            <div class="container">
+                <h2 class="section-title">Impact stories</h2>
+                <p class="section-sub">Real results. Real transformation. See how we partner with the world’s leading organizations.</p>
+                <div class="case-grid">
+                    <div class="case-item">
+                        <div class="case-img"><i class="fas fa-car" style="font-size: 3rem;"></i></div>
+                        <div class="case-content">
+                            <span class="case-tag">Automotive & AI</span>
+                            <h4>AI-driven predictive maintenance</h4>
+                            <p>Reduced downtime by 35% for a global manufacturer using edge AI and analytics.</p>
+                        </div>
+                    </div>
+                    <div class="case-item">
+                        <div class="case-img"><i class="fas fa-hospital-user" style="font-size: 3rem;"></i></div>
+                        <div class="case-content">
+                            <span class="case-tag">Healthcare</span>
+                            <h4>Digital patient engagement</h4>
+                            <p>Launched a 360° health platform serving 10M+ users across 15 countries.</p>
+                        </div>
+                    </div>
+                    <div class="case-item">
+                        <div class="case-img"><i class="fas fa-university" style="font-size: 3rem;"></i></div>
+                        <div class="case-content">
+                            <span class="case-tag">Financial Services</span>
+                            <h4>Cloud migration & modernization</h4>
+                            <p>Saved 40% infrastructure costs while improving resilience and compliance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <h2>Let’s create something extraordinary</h2>
+                <p>Join us and the world’s most innovative teams. Together, we deliver on the promise of technology and human ingenuity.</p>
+                <a href="#" class="btn-primary btn-cta">Get in touch <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-text" style="color: white; font-size: 1.8rem;">Accen<span style="color:#a100ff;">ture</span></div>
+                    <p>Let there be change — harnessing technology for good, building sustainable impact.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="link-col">
+                        <h4>Explore</h4>
+                        <a href="#">Services</a>
+                        <a href="#">Industries</a>
+                        <a href="#">Insights</a>
+                        <a href="#">Careers</a>
+                    </div>
+                    <div class="link-col">
+                        <h4>About</h4>
+                        <a href="#">Who we are</a>
+                        <a href="#">Sustainability</a>
+                        <a href="#">Investor relations</a>
+                        <a href="#">Newsroom</a>
+                    </div>
+                    <div class="link-col">
+                        <h4>Support</h4>
+                        <a href="#">Contact us</a>
+                        <a href="#">Privacy & terms</a>
+                        <a href="#">Cookie settings</a>
+                        <a href="#">Accessibility</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Accenture. All Rights Reserved. This is a concept corporate website for demonstration.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
